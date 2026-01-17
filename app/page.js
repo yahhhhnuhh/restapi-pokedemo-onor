@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar";
 import ClientWrapper from "./components/ClientWrapper";
 import { Suspense } from "react";
 
+export const dynamic = 'force-dynamic';
+
 async function fetchPokemon(limit = 20) {
   const res = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
   const list = await res.json();
