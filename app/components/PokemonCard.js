@@ -42,40 +42,40 @@ export default function PokemonCard({ pokemon }) {
   };
 
   return (
-    <div className="bg-white rounded-none shadow-lg p-6 border-4 border-gray-800 pixel-border hover:shadow-xl transition-shadow duration-300 relative">
+    <div className="bg-white rounded-none shadow-lg p-4 sm:p-6 border-4 border-gray-800 pixel-border hover:shadow-xl transition-shadow duration-300 relative">
       <button
         onClick={handleFavoriteClick}
-        className="absolute top-2 right-2 text-lg transition-colors duration-200 cursor-pointer z-10"
+        className="absolute top-2 right-2 text-lg sm:text-xl transition-colors duration-200 cursor-pointer z-10"
       >
         {isFavorite(pokemon.id) ? "❤️" : "🤍"}
       </button>
-      <div className="bg-gradient-to-r from-red-600 to-red-700 -m-6 mb-4 p-6 border-4 border-gray-800">
-        <img src={pokemon.sprites.front_default} className="h-32 mx-auto drop-shadow-lg pixelated" />
+      <div className="bg-gradient-to-r from-red-600 to-red-700 -m-4 sm:-m-6 mb-4 p-4 sm:p-6 border-4 border-gray-800">
+        <img src={pokemon.sprites.front_default} className="h-24 sm:h-32 mx-auto drop-shadow-lg pixelated" />
       </div>
       
-      <h3 className="text-lg pixel-font text-center text-gray-800 mb-2 uppercase">
+      <h3 className="text-sm sm:text-lg pixel-font text-center text-gray-800 mb-2 uppercase">
         #{pokemon.id.toString().padStart(4, '0')} {pokemon.name}
       </h3>
       
-      <div className="flex justify-center space-x-2 mb-4">
+      <div className="flex justify-center flex-wrap gap-1 sm:gap-2 mb-4">
         {pokemon.types.map(t => (
-          <span key={t.type.name} className={`px-3 py-1 ${getTypeColor(t.type.name)} text-white border-2 border-gray-800 pixel-font text-xs font-bold uppercase`}>
+          <span key={t.type.name} className={`px-2 sm:px-3 py-1 ${getTypeColor(t.type.name)} text-white border-2 border-gray-800 pixel-font text-xs font-bold uppercase`}>
             {t.type.name}
           </span>
         ))}
       </div>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col sm:flex-row gap-2">
         <button
           onClick={() => setShowStats(!showStats)}
-          className="flex-1 bg-red-600 hover:bg-red-700 text-white pixel-font text-xs py-2 px-4 border-2 border-gray-800 transition-colors duration-200 cursor-pointer shadow-md hover:shadow-lg"
+          className="flex-1 bg-red-600 hover:bg-red-700 text-white pixel-font text-xs py-2 px-3 sm:px-4 border-2 border-gray-800 transition-colors duration-200 cursor-pointer shadow-md hover:shadow-lg"
         >
           {showStats ? "HIDE STATS" : "SHOW STATS"}
         </button>
 
         <Link
           href="/compare"
-          className="bg-blue-600 hover:bg-blue-700 text-white pixel-font text-xs py-2 px-4 border-2 border-gray-800 transition-colors duration-200 cursor-pointer shadow-md hover:shadow-lg"
+          className="bg-blue-600 hover:bg-blue-700 text-white pixel-font text-xs py-2 px-3 sm:px-4 border-2 border-gray-800 transition-colors duration-200 cursor-pointer shadow-md hover:shadow-lg text-center"
         >
           ⚔️ COMPARE
         </Link>
@@ -83,7 +83,7 @@ export default function PokemonCard({ pokemon }) {
 
       {showStats && (
         <div className="mt-4">
-          <div className="bg-gray-100 border-2 border-gray-800 p-4 mb-4">
+          <div className="bg-gray-100 border-2 border-gray-800 p-3 sm:p-4 mb-4">
             <h4 className="pixel-font text-xs text-gray-700 mb-2 uppercase">BASE STATS:</h4>
             <ul className="space-y-1">
               {pokemon.stats.map((s) => (

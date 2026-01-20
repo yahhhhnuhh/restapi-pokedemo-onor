@@ -42,7 +42,7 @@ export default function ClientWrapper({ data }) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="pixel-font text-xs bg-white border-4 border-gray-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="pixel-font text-xs bg-white border-4 border-gray-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full sm:w-auto"
           >
             <option value="number-asc">NUMBER (LOW TO HIGH)</option>
             <option value="number-desc">NUMBER (HIGH TO LOW)</option>
@@ -56,7 +56,7 @@ export default function ClientWrapper({ data }) {
         POKÉMON COLLECTION
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {filteredAndSorted.map((p) => (
           <PokemonCard key={p.id} pokemon={p} />
         ))}

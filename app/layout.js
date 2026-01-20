@@ -20,11 +20,11 @@ export default function RootLayout({ children }) {
       <body className={pixelFont.className}>
         <FavoritesProvider>
           <Navbar />
-          <main className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 p-6 relative scanlines">
-            <div className="absolute top-4 left-4 w-8 h-8 border-l-4 border-t-4 border-yellow-400"></div>
-            <div className="absolute top-4 right-4 w-8 h-8 border-r-4 border-t-4 border-yellow-400"></div>
-            <div className="absolute bottom-4 left-4 w-8 h-8 border-l-4 border-b-4 border-yellow-400"></div>
-            <div className="absolute bottom-4 right-4 w-8 h-8 border-r-4 border-b-4 border-yellow-400"></div>
+          <main className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-green-900 p-3 sm:p-6 relative scanlines">
+            <div className="absolute top-2 sm:top-4 left-2 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 border-l-4 border-t-4 border-yellow-400"></div>
+            <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 border-r-4 border-t-4 border-yellow-400"></div>
+            <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 w-6 h-6 sm:w-8 sm:h-8 border-l-4 border-b-4 border-yellow-400"></div>
+            <div className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 border-r-4 border-b-4 border-yellow-400"></div>
             {children}
           </main>
         </FavoritesProvider>

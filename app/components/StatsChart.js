@@ -59,7 +59,7 @@ export default function StatsChart({ pokemon }) {
   };
 
   return (
-    <div className="bg-white border-4 border-gray-800 p-6 pixel-border shadow-lg">
+    <div className="bg-white border-4 border-gray-800 p-3 sm:p-6 pixel-border shadow-lg">
       <Radar data={data} options={options} />
     </div>
   );
